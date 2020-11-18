@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL安装配置 | Bajins</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="个人笔记">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.d68eb176.css" as="style"><link rel="preload" href="/assets/js/app.9ddf54ff.js" as="script"><link rel="preload" href="/assets/js/4.7882e3c9.js" as="script"><link rel="preload" href="/assets/js/1.1cbc9434.js" as="script"><link rel="preload" href="/assets/js/52.494c0154.js" as="script"><link rel="preload" href="/assets/js/9.47cf28c1.js" as="script"><link rel="prefetch" href="/assets/js/10.27d5e327.js"><link rel="prefetch" href="/assets/js/11.4bdcea6a.js"><link rel="prefetch" href="/assets/js/12.c74dd4ce.js"><link rel="prefetch" href="/assets/js/13.e5a6205a.js"><link rel="prefetch" href="/assets/js/14.dca8100b.js"><link rel="prefetch" href="/assets/js/15.0c892e95.js"><link rel="prefetch" href="/assets/js/16.b32e2c94.js"><link rel="prefetch" href="/assets/js/17.8b22ee76.js"><link rel="prefetch" href="/assets/js/18.44756a3b.js"><link rel="prefetch" href="/assets/js/19.3aa27d7c.js"><link rel="prefetch" href="/assets/js/20.1c6ac0e3.js"><link rel="prefetch" href="/assets/js/21.d4ea9776.js"><link rel="prefetch" href="/assets/js/22.3f0aa30e.js"><link rel="prefetch" href="/assets/js/23.b78bd0c8.js"><link rel="prefetch" href="/assets/js/24.c354b902.js"><link rel="prefetch" href="/assets/js/25.d191a287.js"><link rel="prefetch" href="/assets/js/26.a35715e1.js"><link rel="prefetch" href="/assets/js/27.27100077.js"><link rel="prefetch" href="/assets/js/28.9b51e51a.js"><link rel="prefetch" href="/assets/js/29.b3d46d62.js"><link rel="prefetch" href="/assets/js/30.8828469d.js"><link rel="prefetch" href="/assets/js/31.72f8bb34.js"><link rel="prefetch" href="/assets/js/32.6df74aba.js"><link rel="prefetch" href="/assets/js/33.0130a80e.js"><link rel="prefetch" href="/assets/js/34.af69343e.js"><link rel="prefetch" href="/assets/js/35.57065584.js"><link rel="prefetch" href="/assets/js/36.abc155a9.js"><link rel="prefetch" href="/assets/js/37.d1f5c07d.js"><link rel="prefetch" href="/assets/js/38.162561d6.js"><link rel="prefetch" href="/assets/js/39.b429e787.js"><link rel="prefetch" href="/assets/js/40.1200b6e3.js"><link rel="prefetch" href="/assets/js/41.69c891cb.js"><link rel="prefetch" href="/assets/js/42.80299886.js"><link rel="prefetch" href="/assets/js/43.a4f48d7b.js"><link rel="prefetch" href="/assets/js/44.eb58e604.js"><link rel="prefetch" href="/assets/js/45.0f945e94.js"><link rel="prefetch" href="/assets/js/46.71543e54.js"><link rel="prefetch" href="/assets/js/47.5c3c8bfe.js"><link rel="prefetch" href="/assets/js/48.ef63e1c0.js"><link rel="prefetch" href="/assets/js/49.6f3d021c.js"><link rel="prefetch" href="/assets/js/5.4b93ee0e.js"><link rel="prefetch" href="/assets/js/50.926d43d4.js"><link rel="prefetch" href="/assets/js/51.e0f166c0.js"><link rel="prefetch" href="/assets/js/53.f00d4541.js"><link rel="prefetch" href="/assets/js/54.9dcaa54b.js"><link rel="prefetch" href="/assets/js/55.6eb7b37b.js"><link rel="prefetch" href="/assets/js/56.654f41db.js"><link rel="prefetch" href="/assets/js/57.13a64a75.js"><link rel="prefetch" href="/assets/js/58.451ce378.js"><link rel="prefetch" href="/assets/js/59.1e0db7ba.js"><link rel="prefetch" href="/assets/js/6.99291bce.js"><link rel="prefetch" href="/assets/js/60.0c0334b0.js"><link rel="prefetch" href="/assets/js/61.74615d5a.js"><link rel="prefetch" href="/assets/js/62.ee3957f8.js"><link rel="prefetch" href="/assets/js/63.f2c959dc.js"><link rel="prefetch" href="/assets/js/64.d4566f6b.js"><link rel="prefetch" href="/assets/js/65.a9c46264.js"><link rel="prefetch" href="/assets/js/66.03a00c2d.js"><link rel="prefetch" href="/assets/js/67.d254c952.js"><link rel="prefetch" href="/assets/js/68.9ca363ef.js"><link rel="prefetch" href="/assets/js/69.fbe09a71.js"><link rel="prefetch" href="/assets/js/7.b36f2f9b.js"><link rel="prefetch" href="/assets/js/70.5c123f01.js"><link rel="prefetch" href="/assets/js/71.a6bd5368.js"><link rel="prefetch" href="/assets/js/72.d66e6ed1.js"><link rel="prefetch" href="/assets/js/73.b31a0e99.js"><link rel="prefetch" href="/assets/js/74.1e040f9d.js"><link rel="prefetch" href="/assets/js/75.5817ef1a.js"><link rel="prefetch" href="/assets/js/76.16a5a721.js"><link rel="prefetch" href="/assets/js/77.f3a6c84f.js"><link rel="prefetch" href="/assets/js/78.9b604978.js"><link rel="prefetch" href="/assets/js/79.fda2f7dc.js"><link rel="prefetch" href="/assets/js/8.ad39a300.js"><link rel="prefetch" href="/assets/js/80.b8fda4f1.js"><link rel="prefetch" href="/assets/js/81.0df361a2.js"><link rel="prefetch" href="/assets/js/82.47552a8c.js"><link rel="prefetch" href="/assets/js/83.5ba7f42c.js"><link rel="prefetch" href="/assets/js/84.5e47b5cb.js"><link rel="prefetch" href="/assets/js/85.af1684a1.js"><link rel="prefetch" href="/assets/js/86.9cce92fe.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.fd7c5a4a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d68eb176.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Bajins</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Bajins</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name">Bajins</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link"><i class="iconfont undefined"></i>
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link"><i class="iconfont undefined"></i>
+  Other
+</a></div><div class="nav-item"><a href="/SQL/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  SQL
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link"><i class="iconfont undefined"></i>
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link"><i class="iconfont undefined"></i>
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      更多资源
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.woetu.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  WeChat小程序
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/woytu/tool-gin" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gd.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GoogleDrive
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://od.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  OneDrive
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link"><i class="iconfont undefined"></i>
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link"><i class="iconfont undefined"></i>
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/Other/Windows软件.html" class="nav-link"><i class="iconfont undefined"></i>
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link"><i class="iconfont undefined"></i>
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/woytu/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><!----> <h3 class="name" data-v-ca798c94>
+    Bajins
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>0</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>0</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link"><i class="iconfont undefined"></i>
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link"><i class="iconfont undefined"></i>
+  Other
+</a></div><div class="nav-item"><a href="/SQL/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  SQL
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link"><i class="iconfont undefined"></i>
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link"><i class="iconfont undefined"></i>
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      更多资源
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.woetu.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  WeChat小程序
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/woytu/tool-gin" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gd.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GoogleDrive
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://od.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  OneDrive
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link"><i class="iconfont undefined"></i>
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link"><i class="iconfont undefined"></i>
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/Other/Windows软件.html" class="nav-link"><i class="iconfont undefined"></i>
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link"><i class="iconfont undefined"></i>
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/woytu/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><a href="/SQL/MySQL事件.html" class="sidebar-link">MySQL事件</a></li><li><a href="/SQL/MySQL备份恢复数据.html" class="sidebar-link">MySQL备份恢复数据</a></li><li><a href="/SQL/MySQL存储过程.html" class="sidebar-link">MySQL存储过程</a></li><li><a href="/SQL/MySQL安装配置.html" class="active sidebar-link">MySQL安装配置</a></li><li><a href="/SQL/MySQL常见问题.html" class="sidebar-link">MySQL常见问题</a></li><li><a href="/SQL/MySQL笔记.html" class="sidebar-link">MySQL笔记</a></li><li><a href="/SQL/" aria-current="page" class="sidebar-link">SQL</a></li><li><a href="/SQL/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e></h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Bajins</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-2d5f533b><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">MySQL安装配置</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>Bajins</span></i> <!----> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/SQL/MySQL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="mysql安装配置"><a href="#mysql安装配置" class="header-anchor">#</a> MySQL安装配置</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#windows版安装">Windows版安装</a></li><li><a href="#centos安装">CentOS安装</a><ul><li><a href="#yum安装">yum安装</a></li><li><a href="#编译安装">编译安装</a></li></ul></li><li><a href="#配置">配置</a><ul><li><a href="#yum安装配置">yum安装配置</a></li><li><a href="#宝塔面板安装配置">宝塔面板安装配置</a></li></ul></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://github.com/mysql" target="_blank" rel="noopener noreferrer">https://github.com/mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://dev.mysql.com/downloads/mysql" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads/mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="windows版安装"><a href="#windows版安装" class="header-anchor">#</a> Windows版安装</h2> <blockquote><p>这里是介绍免安装版的Mysql</p></blockquote> <ol><li>安装服务：<code>mysqld --install</code> 如果执行错误需要安装C++运行库</li> <li>初始化：<code>mysqld --initialize --console</code> 会产生一个随机密码
+<ul><li><code>mysqld –initialize-insecure</code> 初始化数据库，并设置默认root密码为空</li> <li><code>mysqladmin -u root password 密码&quot;;</code> 创建root用户的密码</li></ul></li> <li>开启服务：<code>net start mysql</code></li> <li>关闭服务：<code>net stop mysql</code></li> <li>登录mysql：<code>mysql -u root -p</code></li> <li>修改密码：<code>alter user 'root'@'localhost' identified by '密码';</code></li> <li>标记删除mysql服务：<code>sc delete mysql</code></li></ol> <h2 id="centos安装"><a href="#centos安装" class="header-anchor">#</a> CentOS安装</h2> <h3 id="yum安装"><a href="#yum安装" class="header-anchor">#</a> yum安装</h3> <ul><li><p><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p><a href="https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql" target="_blank" rel="noopener noreferrer">https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li></ul> <blockquote><p>首先<code>CentOS7</code>默认已经不支持<code>mysql</code>，因为收费了你懂得，所以内部集成了<code>mariadb</code>，
+而安装<code>mysql</code>的话会和<code>mariadb</code>的文件冲突，所以需要先卸载掉<code>mariadb</code>，以下为卸载<code>mariadb</code>，安装<code>mysql</code>的步骤。</p></blockquote> <p><strong>卸载</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看软件包</span>
+<span class="token function">rpm</span> -qa <span class="token operator">|</span> <span class="token function">grep</span> -i <span class="token string">&quot;mariadb\|mysql&quot;</span>
+<span class="token comment"># --nodeps强制卸载</span>
+<span class="token function">rpm</span> -e --nodeps mariadb-libs-5.5.56-2.el7.x86_64
+
+<span class="token comment"># 检测系统是否存在mysql</span>
+yum list installed <span class="token operator">|</span> <span class="token function">grep</span> mysql
+<span class="token comment"># 删除mysql依赖项</span>
+yum remove -y mysql mysql-server mysql-libs mysql-server
+</code></pre></div><ul><li>查找残留目录</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">whereis</span> mysql
+</code></pre></div><p><strong>安装依赖</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y <span class="token function">install</span> libaio glibc
+</code></pre></div><p><strong>下载yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># MySQL 8.0</span>
+<span class="token function">wget</span> https://repo.mysql.com//mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>安装yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y localinstall mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>查看所有版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist all <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><blockquote><p>可以看到这里默认启用了<code>MySQL 8.0 Community Server</code>，而我们需要安装的是<code>MySQL 5.7 Community Server</code></p></blockquote> <p><strong>修改源设置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/yum.repos.d/mysql-community.repo
+</code></pre></div><ul><li>找到mysql57-community节点</li></ul> <blockquote><p>将<code>enabled=0</code>改成<code>enabled=1</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql57-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">5.7</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+</code></pre></div><ul><li>找到<code>mysql80-community</code>节点</li></ul> <blockquote><p>将<code>enabled=1</code>改成<code>enabled=0</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql80-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">8.0</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-8.0-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+</code></pre></div><ul><li>或者使用命令</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 禁用MySQL版本</span>
+yum-config-manager --disable mysql80-community
+<span class="token comment"># 启用MySQL版本</span>
+yum-config-manager --enable mysql57-community
+</code></pre></div><p><strong>查看默认启用版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist enabled <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><p><strong>安装</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y <span class="token function">install</span> mysql-community-server
+</code></pre></div><p><strong>查看安装版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>mysqld -V
+</code></pre></div><h3 id="编译安装"><a href="#编译安装" class="header-anchor">#</a> 编译安装</h3> <p><strong>下载</strong></p> <ul><li><a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads/mysql/5.7.html#downloads<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><img src="/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png" alt=""></p> <p><strong>解压</strong></p> <blockquote><p>建议：不要安装到其它目录，否则数据库初始化的时候会报<code>cannot change dir</code>的错</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">tar</span> zxvf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz -C /usr/local/mysql
+<span class="token comment"># 重命名</span>
+<span class="token function">mv</span> mysql-5.7.22-linux-glibc2.12-x86_64 mysql
+</code></pre></div><p><strong>创建用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>group <span class="token function">add</span> mysql
+</code></pre></div><p><strong>创建用户</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>user <span class="token function">add</span> -r -g mysql mysql
+</code></pre></div><ul><li><p>为了安全性，给mysql数据库创建专有用户，该用户只能访问mysql目录，不能访问系统其它目录</p></li> <li><p>另外不建议直接用root初始化mysql，否则连接mysql时会报错：</p></li></ul> <blockquote><p><code>[ERROR] Fatal error: Please read &quot;Security&quot; section of the manual to find out how to run mysqld as root!</code></p></blockquote> <p><strong>创建data目录</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql
+<span class="token function">mkdir</span> data
+</code></pre></div><p><strong>指定用户和用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local
+<span class="token function">chown</span> -R mysql mysql/
+<span class="token function">chgrp</span> -R mysql mysql/
+</code></pre></div><blockquote><p><code>-R</code>包含目录下所有和目录和文件</p></blockquote> <p><strong>初始化</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+
+./mysqld --initialize --user<span class="token operator">=</span>mysql <span class="token punctuation">\</span>
+--basedir<span class="token operator">=</span>/usr/local/mysql/ <span class="token punctuation">\</span>
+--datadir<span class="token operator">=</span>/usr/local/mysql/data/ <span class="token punctuation">\</span>
+--lc_messages_dir<span class="token operator">=</span>/usr/local/mysql/share <span class="token punctuation">\</span>
+--lc_messages<span class="token operator">=</span>en_US
+</code></pre></div><blockquote><p>记住生成的临时密码,如果忘记密码或者想重新初始化，可以先将<code>mysql/data</code>目录中文件删除，然后再执行初始化命令</p></blockquote> <p><strong>启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+<span class="token comment"># 启动</span>
+./mysqld_safe --user<span class="token operator">=</span>mysql <span class="token operator">&amp;</span>
+</code></pre></div><p><strong>设为开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/support-files/
+<span class="token function">cp</span> mysql.server /etc/init.d/mysql
+<span class="token function">vi</span> /etc/init.d/mysql
+</code></pre></div><blockquote><p>将mysql目录填上</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">basedir</span><span class="token operator">=</span>/usr/local/mysql/
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/usr/local/mysql/data/
+</code></pre></div><p><strong>授权</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chmod</span> +x /etc/init.d/mysql
+</code></pre></div><p><strong>添加开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> --add mysql
+</code></pre></div><p><strong>service启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 重启服务</span>
+<span class="token function">service</span> mysql restart
+<span class="token comment"># 停止服务</span>
+<span class="token function">service</span> mysql stop
+<span class="token comment"># 启动服务</span>
+<span class="token function">service</span> mysql start
+<span class="token comment"># 查看服务</span>
+<span class="token function">service</span> mysql status
+</code></pre></div><h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <ul><li>5.7动态参数 <a href="https://dev.mysql.com/doc/refman/5.7/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">5.7 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>8.0动态参数 <a href="https://dev.mysql.com/doc/refman/8.0/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">8.0 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><code>set persist</code> 修改并持久化动态参数</li> <li><code>set persist_only</code> 持久化静态参数</li></ul></li> <li><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html" target="_blank" rel="noopener noreferrer">服务器系统变量 - 官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>从5.7.17后mysql就没有默认的<code>my_default.cnf</code>文件，需要手动创建</p></blockquote> <blockquote><p>windows在mysql目录下创建一个ini或cnf配置文件</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/my.cnf
+</code></pre></div><blockquote><p>按<code>i</code>后输入以下内容</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment"># sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span>
+
+<span class="token comment"># 一般配置选项</span>
+basedir <span class="token operator">=</span> /usr/local/mysql/
+datadir <span class="token operator">=</span> /usr/local/mysql/data
+port <span class="token operator">=</span> <span class="token number">3306</span>
+character-set-server <span class="token operator">=</span> utf8
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment"># socket = /var/run/mysqld/mysqld.sock</span>
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment">#下面是可选项，要不要都行，如果出现启动错误，则全部注释掉，</span>
+<span class="token comment">#保留最基本的配置选项，然后尝试添加某些配置项后启动，检测配置项是否有误</span>
+back_log <span class="token operator">=</span> <span class="token number">300</span>
+max_connections <span class="token operator">=</span> <span class="token number">3000</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">50</span>
+table_open_cache <span class="token operator">=</span> <span class="token number">4096</span>
+max_allowed_packet <span class="token operator">=</span> 32M
+<span class="token comment">#binlog_cache_size = 4M</span>
+
+max_heap_table_size <span class="token operator">=</span> 128M
+read_rnd_buffer_size <span class="token operator">=</span> 16M
+sort_buffer_size <span class="token operator">=</span> 16M
+join_buffer_size <span class="token operator">=</span> 16M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 128M
+query_cache_limit <span class="token operator">=</span> 4M
+ft_min_word_len <span class="token operator">=</span> <span class="token number">8</span>
+
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#log-bin=mysql-bin</span>
+long_query_time <span class="token operator">=</span> <span class="token number">6</span>
+
+<span class="token assign-left variable">server_id</span><span class="token operator">=</span><span class="token number">1</span>
+
+innodb_buffer_pool_size <span class="token operator">=</span> 1G
+innodb_thread_concurrency <span class="token operator">=</span> <span class="token number">16</span>
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+
+innodb_log_file_size <span class="token operator">=</span> 512M
+innodb_log_files_in_group <span class="token operator">=</span> <span class="token number">3</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_file_per_table <span class="token operator">=</span> on
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 32M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+default-character-set<span class="token operator">=</span>utf8
+safe-updates
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer <span class="token operator">=</span> 16M
+sort_buffer_size <span class="token operator">=</span> 16M
+read_buffer <span class="token operator">=</span> 8M
+write_buffer <span class="token operator">=</span> 8M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+
+<span class="token punctuation">[</span>mysqld_safe<span class="token punctuation">]</span>
+open-files-limit <span class="token operator">=</span> <span class="token number">8192</span>
+
+</code></pre></div><h3 id="yum安装配置"><a href="#yum安装配置" class="header-anchor">#</a> yum安装配置</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token comment">#password   = your_password</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /var/lib/mysql/mysql.sock
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /var/lib/mysql/mysql.sock
+datadir <span class="token operator">=</span> /var/lib/mysql
+symbolic-links<span class="token operator">=</span> <span class="token number">0</span>
+log-error<span class="token operator">=</span> /var/log/mysqld.log
+pid-file<span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+skip-external-locking
+<span class="token assign-left variable">performance_schema_max_table_instances</span><span class="token operator">=</span><span class="token number">400</span>
+<span class="token assign-left variable">table_definition_cache</span><span class="token operator">=</span><span class="token number">400</span>
+key_buffer_size <span class="token operator">=</span> 32M
+max_allowed_packet <span class="token operator">=</span> 100G
+table_open_cache <span class="token operator">=</span> <span class="token number">128</span>
+sort_buffer_size <span class="token operator">=</span> 768K
+net_buffer_length <span class="token operator">=</span> 8K
+read_buffer_size <span class="token operator">=</span> 768K
+read_rnd_buffer_size <span class="token operator">=</span> 512K
+myisam_sort_buffer_size <span class="token operator">=</span> 8M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 16M
+tmp_table_size <span class="token operator">=</span> 32M
+sql-mode<span class="token operator">=</span>NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment">#skip-networking</span>
+max_connections <span class="token operator">=</span> <span class="token number">500</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">100</span>
+open_files_limit <span class="token operator">=</span> <span class="token number">65535</span>
+
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+log-bin<span class="token operator">=</span>mysql-bin
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+
+<span class="token comment"># 数据库ID号,为1时表示为Master,其中master_id必须为1到232–1</span>
+<span class="token comment"># 之间的一个正整数值，主从server-id不能一样;</span>
+server-id <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#自动删除5天前的日志。默认值为0，表示从不删除。</span>
+expire_logs_days <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token assign-left variable">slow_query_log</span><span class="token operator">=</span><span class="token number">1</span>
+slow-query-log-file<span class="token operator">=</span>/var/lib/mysql/mysql-slow.log
+<span class="token assign-left variable">long_query_time</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">#log_queries_not_using_indexes=on</span>
+
+<span class="token comment"># MySQL5.7.11拥有，默认值为keyring_file，</span>
+<span class="token comment"># InnoDB表空间在初始化InnoDB之前需要此插件来加密，</span>
+<span class="token comment"># MySQL5.7.12及以后此参数默认为空</span>
+<span class="token comment">#early-plugin-load = &quot;&quot;</span>
+
+<span class="token comment">#loose-innodb-trx=0</span>
+<span class="token comment">#loose-innodb-locks=0</span>
+<span class="token comment">#loose-innodb-lock-waits=0</span>
+<span class="token comment">#loose-innodb-cmp=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index-reset=0</span>
+<span class="token comment">#loose-innodb-cmp-reset=0</span>
+<span class="token comment">#loose-innodb-cmpmem=0</span>
+<span class="token comment">#loose-innodb-cmpmem-reset=0</span>
+<span class="token comment">#loose-innodb-buffer-page=0</span>
+<span class="token comment">#loose-innodb-buffer-page-lru=0</span>
+<span class="token comment">#loose-innodb-buffer-pool-stats=0</span>
+<span class="token comment">#loose-innodb-metrics=0</span>
+<span class="token comment">#loose-innodb-ft-default-stopword=0</span>
+<span class="token comment">#loose-innodb-ft-inserted=0</span>
+<span class="token comment">#loose-innodb-ft-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-being-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-config=0</span>
+<span class="token comment">#loose-innodb-ft-index-cache=0</span>
+<span class="token comment">#loose-innodb-ft-index-table=0</span>
+<span class="token comment">#loose-innodb-sys-tables=0</span>
+<span class="token comment">#loose-innodb-sys-tablestats=0</span>
+<span class="token comment">#loose-innodb-sys-indexes=0</span>
+<span class="token comment">#loose-innodb-sys-columns=0</span>
+<span class="token comment">#loose-innodb-sys-fields=0</span>
+<span class="token comment">#loose-innodb-sys-foreign=0</span>
+<span class="token comment">#loose-innodb-sys-foreign-cols=0</span>
+
+default_storage_engine <span class="token operator">=</span> InnoDB
+innodb_data_home_dir <span class="token operator">=</span> /var/lib/mysql
+innodb_data_file_path <span class="token operator">=</span> ibdata1:10M:autoextend
+innodb_log_group_home_dir <span class="token operator">=</span> /var/lib/mysql
+innodb_buffer_pool_size <span class="token operator">=</span> 128M
+innodb_log_file_size <span class="token operator">=</span> 64M
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+innodb_flush_log_at_trx_commit <span class="token operator">=</span> <span class="token number">1</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_read_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+innodb_write_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 16M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer_size <span class="token operator">=</span> 32M
+sort_buffer_size <span class="token operator">=</span> 768K
+read_buffer <span class="token operator">=</span> 2M
+write_buffer <span class="token operator">=</span> 2M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+</code></pre></div><h3 id="宝塔面板安装配置"><a href="#宝塔面板安装配置" class="header-anchor">#</a> 宝塔面板安装配置</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token comment">#password   = your_password</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /tmp/mysql.sock
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /tmp/mysql.sock
+datadir <span class="token operator">=</span> /usr/local/mysql/data
+skip-external-locking
+<span class="token assign-left variable">performance_schema_max_table_instances</span><span class="token operator">=</span><span class="token number">400</span>
+<span class="token assign-left variable">table_definition_cache</span><span class="token operator">=</span><span class="token number">400</span>
+key_buffer_size <span class="token operator">=</span> 32M
+max_allowed_packet <span class="token operator">=</span> 100G
+table_open_cache <span class="token operator">=</span> <span class="token number">128</span>
+sort_buffer_size <span class="token operator">=</span> 768K
+net_buffer_length <span class="token operator">=</span> 8K
+read_buffer_size <span class="token operator">=</span> 768K
+read_rnd_buffer_size <span class="token operator">=</span> 512K
+myisam_sort_buffer_size <span class="token operator">=</span> 8M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 16M
+tmp_table_size <span class="token operator">=</span> 32M
+sql-mode<span class="token operator">=</span>NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment">#skip-networking</span>
+max_connections <span class="token operator">=</span> <span class="token number">500</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">100</span>
+open_files_limit <span class="token operator">=</span> <span class="token number">65535</span>
+
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+log-bin<span class="token operator">=</span>mysql-bin
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+server-id <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#自动删除5天前的日志。默认值为0，表示从不删除。</span>
+expire_logs_days <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token assign-left variable">slow_query_log</span><span class="token operator">=</span><span class="token number">1</span>
+slow-query-log-file<span class="token operator">=</span>/usr/local/mysql/data/mysql-slow.log
+<span class="token assign-left variable">long_query_time</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">#log_queries_not_using_indexes=on</span>
+<span class="token comment"># MySQL5.7.11拥有，默认值为keyring_file，</span>
+<span class="token comment"># InnoDB表空间在初始化InnoDB之前需要此插件来加密，</span>
+<span class="token comment"># MySQL5.7.12及以后此参数默认为空</span>
+<span class="token comment">#early-plugin-load = &quot;&quot;</span>
+
+<span class="token comment">#loose-innodb-trx=0</span>
+<span class="token comment">#loose-innodb-locks=0</span>
+<span class="token comment">#loose-innodb-lock-waits=0</span>
+<span class="token comment">#loose-innodb-cmp=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index-reset=0</span>
+<span class="token comment">#loose-innodb-cmp-reset=0</span>
+<span class="token comment">#loose-innodb-cmpmem=0</span>
+<span class="token comment">#loose-innodb-cmpmem-reset=0</span>
+<span class="token comment">#loose-innodb-buffer-page=0</span>
+<span class="token comment">#loose-innodb-buffer-page-lru=0</span>
+<span class="token comment">#loose-innodb-buffer-pool-stats=0</span>
+<span class="token comment">#loose-innodb-metrics=0</span>
+<span class="token comment">#loose-innodb-ft-default-stopword=0</span>
+<span class="token comment">#loose-innodb-ft-inserted=0</span>
+<span class="token comment">#loose-innodb-ft-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-being-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-config=0</span>
+<span class="token comment">#loose-innodb-ft-index-cache=0</span>
+<span class="token comment">#loose-innodb-ft-index-table=0</span>
+<span class="token comment">#loose-innodb-sys-tables=0</span>
+<span class="token comment">#loose-innodb-sys-tablestats=0</span>
+<span class="token comment">#loose-innodb-sys-indexes=0</span>
+<span class="token comment">#loose-innodb-sys-columns=0</span>
+<span class="token comment">#loose-innodb-sys-fields=0</span>
+<span class="token comment">#loose-innodb-sys-foreign=0</span>
+<span class="token comment">#loose-innodb-sys-foreign-cols=0</span>
+
+default_storage_engine <span class="token operator">=</span> InnoDB
+innodb_data_home_dir <span class="token operator">=</span> /usr/local/mysql/data
+innodb_data_file_path <span class="token operator">=</span> ibdata1:10M:autoextend
+innodb_log_group_home_dir <span class="token operator">=</span> /usr/local/mysql/data
+innodb_buffer_pool_size <span class="token operator">=</span> 128M
+innodb_log_file_size <span class="token operator">=</span> 64M
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+innodb_flush_log_at_trx_commit <span class="token operator">=</span> <span class="token number">1</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_read_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+innodb_write_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 16M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer_size <span class="token operator">=</span> 32M
+sort_buffer_size <span class="token operator">=</span> 768K
+read_buffer <span class="token operator">=</span> 2M
+write_buffer <span class="token operator">=</span> 2M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+</code></pre></div><blockquote><p>按<code>ESC</code>后输入<code>:wq</code>退出</p></blockquote> <h1 id="返回顶部"><a href="#返回顶部" class="header-anchor">#</a> <a href="#readme">返回顶部</a></h1></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/woytu/notes-vuepress/edit/master//SQL/MySQL安装配置.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2 分钟前</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/assets/js/app.9ddf54ff.js" defer></script><script src="/assets/js/4.7882e3c9.js" defer></script><script src="/assets/js/1.1cbc9434.js" defer></script><script src="/assets/js/52.494c0154.js" defer></script><script src="/assets/js/9.47cf28c1.js" defer></script>
+  </body>
+</html>
